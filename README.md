@@ -1,7 +1,6 @@
 # Phone-nav-button-practice
-Trying out phone nav button using checkbox and select
-
 
 As title:
 - Create simple nav bar
-- drop down button for mobile
+- Added mobile drop down nav bar button with checkbox
+- Changes to full layout navbar on larger screens with flex
