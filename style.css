@@ -99,33 +99,33 @@ nav a:hover {
     color: gray;
 }
 
-nav:hover,
-.nav-button:checked ~ nav,
-.nav-button:hover ~ nav {
+/* nav:hover,
+.nav-button:hover ~ nav,  */
+.nav-button:checked ~ nav {
     transform: scale(1);   
 }
 
-nav:hover a,
-.nav-button:checked ~ nav a,
-.nav-button:hover ~ nav a {
+/* nav:hover a,
+.nav-button:hover ~ nav a, */
+.nav-button:checked ~ nav a {
     opacity: 1;   
     transition: opacity .4s ease .3s;
 }
 
-nav:hover ~ label span,
+/* nav:hover ~ label span,
 nav:hover ~ label span::before,
 nav:hover ~ label span::after,
-.nav-button:checked ~ label span,
-.nav-button:checked ~ label span::before,
-.nav-button:checked ~ label span::after,
 .nav-button:hover ~ label span,
 .nav-button:hover ~ label span::before,
-.nav-button:hover ~ label span::after {
+.nav-button:hover ~ label span::after */
+.nav-button:checked ~ label span,
+.nav-button:checked ~ label span::before,
+.nav-button:checked ~ label span::after { 
     background-color: grey;
 }
 
 /* -------------------------- Large screen nav ----------------------------- */
 
-@media screen and (max-width: 812) {
+@media screen and (min-width: 812px) {
 
 }
