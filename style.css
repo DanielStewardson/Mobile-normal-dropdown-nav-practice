@@ -1,0 +1,121 @@
+body, html, li, ul, nav, div, header, img, input {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* -------------------------- Header and nav ----------------------------- */
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+    background-color: burlywood;
+}
+
+img {
+    width: 2rem;
+    margin: 1rem;
+}
+
+nav {
+    transform: scale(1, 0);
+    transition: transform .5s ease;
+    transform-origin: top;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 25%;
+    text-align: left;
+    background-color:burlywood;
+}
+
+nav ul { 
+    list-style: none;
+}
+
+nav li {
+    margin: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* -------------------------- Nav mobile button ----------------------------- */
+
+.nav-button {
+    display: none;
+}
+
+.nav-button-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-button-label span,
+.nav-button-label span::before,
+.nav-button-label span::after {
+    display: block;
+    background-color: white;
+    height: 4px;
+    width: 2.5rem;
+    border-radius: 20px;
+    position: relative;
+}
+
+.nav-button-label span::before,
+.nav-button-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-button-label span::before {
+    bottom: 10px;
+}
+
+.nav-button-label span::after {
+    top: 10px;
+}
+
+/* -------------------------- Nav hover/checed etc ----------------------------- */
+
+nav a:hover {
+    color: gray;
+}
+
+nav:hover,
+.nav-button:checked ~ nav,
+.nav-button:hover ~ nav {
+    transform: scale(1);   
+}
+
+nav:hover a,
+.nav-button:checked ~ nav a,
+.nav-button:hover ~ nav a {
+    opacity: 1;   
+    transition: opacity .4s ease .3s;
+}
+
+nav:hover ~ label span,
+nav:hover ~ label span::before,
+nav:hover ~ label span::after,
+.nav-button:checked ~ label span,
+.nav-button:checked ~ label span::before,
+.nav-button:checked ~ label span::after,
+.nav-button:hover ~ label span,
+.nav-button:hover ~ label span::before,
+.nav-button:hover ~ label span::after {
+    background-color: grey;
+}
