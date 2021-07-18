@@ -18,7 +18,7 @@ header {
     background-color: burlywood;
 }
 
-img {
+.nav-icon {
     width: 1.4rem;
     margin: .8rem;
 }
@@ -46,7 +46,7 @@ nav li {
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: sans-serif;
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -118,5 +118,30 @@ nav a:hover {
 /* -------------------------- Large screen nav ----------------------------- */
 
 @media screen and (min-width: 812px) {
-
+    .nav-button-label {
+        display: none;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-icon {
+        margin: .6rem 3rem;
+    }
+    nav {
+        all: unset;
+    }
+    nav ul {
+        display: flex;
+    }
+    nav li {
+        margin: .5rem 1rem;
+    }
+    nav li:last-child {
+        margin-right: 3rem;
+    }
+    nav a {
+        opacity: 1;
+    }
 }
