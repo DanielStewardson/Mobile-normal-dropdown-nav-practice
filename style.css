@@ -10,6 +10,9 @@ body {
 
 /* -------------------------- Header and nav ----------------------------- */
 
+.sub-ul {
+    display: none;
+}
 header {
     position: fixed;
     width: 100%;
@@ -41,6 +44,7 @@ nav ul {
 
 nav li {
     margin: 1.5rem;
+    position: relative;
 }
 
 nav a {
@@ -66,6 +70,7 @@ nav a {
     height: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .nav-button-label span,
@@ -77,6 +82,7 @@ nav a {
     width: 2rem;
     border-radius: 20px;
     position: relative;
+    transition: .5s ease;
 }
 
 .nav-button-label span::before,
@@ -94,7 +100,7 @@ nav a {
     box-shadow: 0 2px 4px 0px hsl(0, 0%, 6%, 0.2), 0 5px 8px 2px hsl(0, 0%, 6%, 0.2);
 }
 
-/* -------------------------- Nav hover/checed etc ----------------------------- */
+/* -------------------------- Nav hover/checked etc ----------------------------- */
 
 nav a:hover {
     color: gray;
@@ -114,6 +120,25 @@ nav a:hover {
 .nav-button:checked ~ label span::after { 
     background-color: grey;
 }
+
+/* -------------------------- Button spin ----------------------------- */
+
+.nav-button:checked ~ label span {
+    transform: rotate(45deg);
+    transition: transform .5s;
+}
+
+.nav-button:checked ~ label span::before {
+    bottom: 0;
+    transform: rotate(90deg);
+    transition: bottom .5s, transform .5s ease;
+}
+
+.nav-button:checked ~ label span::after {
+    top: 0;
+    transition: top .5s ease;
+}
+
 
 /* -------------------------- Large screen nav ----------------------------- */
 
@@ -136,7 +161,9 @@ nav a:hover {
         display: flex;
     }
     nav li {
-        margin: .5rem 1rem;
+        margin: 0;
+        padding: 1rem;
+        background-color: burlywood;
     }
     nav li:last-child {
         margin-right: 3rem;
@@ -144,4 +171,42 @@ nav a:hover {
     nav a {
         opacity: 1;
     }
-}
+    .sub-ul {
+        transform: scale(1, 0);
+        position: absolute;
+        top: 3rem;
+        right: 0;
+        width: 100%;
+        height: 3.1rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        transition: transform .4s ease;
+        transform-origin: top;
+        background-color: burlywood;
+    }
+    .sub-ul a {
+        opacity: 0;
+    }
+
+            /* -------------------------- Large screen hovers ----------------------------- */
+
+    .sub-ul:hover a,
+    .li-opacity:hover ~ .sub-ul a {
+        opacity: 1;
+        transition: opacity .4s ease .4s;
+    }
+    .shop-sub-ul:hover,
+    .shop-li:hover ~ .shop-sub-ul {
+        transform: scale(1);
+    }
+    .sale-sub-ul:hover,
+    .sale-li:hover ~ .sale-sub-ul {
+        transform: scale(1);
+    }
+    .book-sub-ul:hover,
+    .book-li:hover ~ .book-sub-ul {
+        transform: scale(1);
+    }
+    
+} 
