@@ -196,17 +196,39 @@ nav a:hover {
         opacity: 1;
         transition: opacity .4s ease .4s;
     }
+    .sub-ul:focus-within a,
+    .li-opacity:focus-within ~ .sub-ul a {
+        opacity: 1;
+        transition: opacity .4s ease .4s;
+    }
+
+     /* --------- Shop -------*/
     .shop-sub-ul:hover,
     .shop-li:hover ~ .shop-sub-ul {
         transform: scale(1);
     }
+    .shop-sub-ul:focus-within,
+    .shop-li:focus-within ~ .shop-sub-ul {
+        transform: scale(1);
+    }
+   
+    /* --------- Sale -------*/
     .sale-sub-ul:hover,
     .sale-li:hover ~ .sale-sub-ul {
         transform: scale(1);
     }
+
+    .sale-sub-ul:focus-within,
+    .sale-li:focus-within ~ .sale-sub-ul {
+        transform: scale(1);
+    }
+    /* --------- Book -------*/
     .book-sub-ul:hover,
     .book-li:hover ~ .book-sub-ul {
         transform: scale(1);
     }
-    
+    .book-sub-ul:focus-within,
+    .book-li:focus-within ~ .book-sub-ul {
+        transform: scale(1);
+    }
 } 
